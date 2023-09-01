@@ -1,0 +1,27 @@
+<p>product-list works!</p>
+<div class="container" >
+    <table class="table table-success table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Product Id</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Product Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let val of productList">
+          <td>{{ val.productId }}</td>
+          <td>{{ val.productName }}</td>
+          <td>{{ val.price }}</td>
+          <td>
+              <button class="btn btn-secondary btn-sm mt-3" (click)="deleteProduct(val.productId)">Delete</button>
+              <button class="btn btn-secondary btn-sm mt-3" (click)="editProduct()">Edit</button>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+    
+  <div >
+      <app-input-field (sendData)="reciveFunction($event)"></app-input-field>
+  </div>

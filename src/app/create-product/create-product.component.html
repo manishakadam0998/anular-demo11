@@ -1,0 +1,13 @@
+<p>create-product works!</p>
+<div class="row">
+    <div class="col-md-6">
+     <label for="pName" class="form-label">Product Name</label>
+     <input type="text" class="form-control" id="pName" placeholder="" [(ngModel)]="productObjChild.productName">
+    </div>
+    <div class="col-md-6">
+     <label for="pPrice" class="form-label">Product Price</label>
+     <input type="email" class="form-control" id="pPrice" placeholder="" [(ngModel)]="productObjChild.price">
+    </div>
+ </div>
+
+ <button type="button"  class="btn btn-secondary mt-2" (click)="updateProductDetails()">Save Product</button>

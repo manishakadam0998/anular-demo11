@@ -1,0 +1,35 @@
+<p>template-driven-form works!</p>
+<form  #registrationForm="ngForm"  (ngSubmit)="save( registrationForm)">
+    <div class="mb-3" >
+        <label for="id1" class="form-label">Name</label>
+        <input type="email" class="form-control" id="id1"  name="fname" ngModel required="">
+        </div>
+        <div class="mb-3">
+            <label for="id2" class="form-label" name="mob" ngModel required="[0-9]{48}">Mobile</label>
+            <input type="number" class="form-control" id="id2" >
+            </div>
+    
+    
+            <div class="mb-3">
+                <label for="id3" class="form-label">Email</label>
+                <input type="email" class="form-control" id="id3" >
+                </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <div class="alert alert-danger" *ngIf="registrationForm.invalid">
+    Please fill all the required fileds
+   </div>
+ <div class="mt-4">
+    <div class="m-1"><span class="fw-bold">Value </span>: {{registrationForm.value | json}}</div>
+    <div class="m-1"><span class="fw-bold">Valid:&nbsp;</span> {{registrationForm.valid}}</div>
+    <div class="m-1"><span class="fw-bold">Invalid</span>:&nbsp;{{registrationForm.invalid}}</div>
+    <div class="m-1"><span class="fw-bold">Dirty</span>:&nbsp;{{registrationForm.dirty}}</div>
+    <div class="m-1"><span class="fw-bold">Pristine</span>:&nbsp;{{registrationForm.pristine}}</div>
+ </div>
+
+

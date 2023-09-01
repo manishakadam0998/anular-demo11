@@ -1,0 +1,27 @@
+<p>child-insurance works!</p>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="group"
+        [(ngModel)]="insuranceType" (ngModelChange)="selectInsuranceType()">
+    <label class="form-check-label" for="exampleRadios1">
+        group
+    </label>
+    <strong *ngIf="insuranceType === 'group'">listCount:{{list}}   total count of premium:{{list1}} </strong>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="fam"
+        [(ngModel)]="insuranceType" (ngModelChange)="selectInsuranceType()">
+    <label class="form-check-label" for="exampleRadios2">
+        fam
+    </label>
+    <strong *ngIf="insuranceType === 'fam'">listCount:{{list}}   total count of premium: {{list1}}</strong>
+
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="third-party"
+        [(ngModel)]="insuranceType" (ngModelChange)="selectInsuranceType()">
+    <label class="form-check-label" for="exampleRadios2">
+        third-party
+    </label>
+    <strong *ngIf="insuranceType === 'third-party'">listCount:{{list}}  total count of premium: {{list1}} </strong>
+
+</div>

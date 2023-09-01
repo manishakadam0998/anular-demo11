@@ -1,0 +1,30 @@
+<p>product-list11 works!</p>
+<div class="container mt-4">
+    <table class="table" [ngClass]="{'table-secondary':flag}">
+        <thead>
+          <tr>
+            <th scope="col">Action</th>
+            <th scope="col">Product Id</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Product Price</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productList;let i=index">
+                <td><a class="fs-6 cursor" (click)="editData(i)">Edit</a>&nbsp;<a class="fs-6 cursor" (click)="deleteRecord(i)">Delete</a></td>
+                <td>{{product.productId}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+   
+  <button type="button"  class="btn btn-secondary mt-2" (click)="addProduct()">Add Product</button>
+   <div *ngIf="isShow">
+    <app-create-product [productObjChild]="productObj" (sendDataToParent)="getData($event)"></app-create-product>
+   </div> 
+    
+</div>
+
+
+
